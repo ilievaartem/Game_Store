@@ -27,3 +27,4 @@ E:\Study\C# summer\Game_Store\Game_Store\obj\Debug\net8.0\refint\Game_Store.dll
 E:\Study\C# summer\Game_Store\Game_Store\obj\Debug\net8.0\Game_Store.pdb
 E:\Study\C# summer\Game_Store\Game_Store\obj\Debug\net8.0\Game_Store.genruntimeconfig.cache
 E:\Study\C# summer\Game_Store\Game_Store\obj\Debug\net8.0\ref\Game_Store.dll
+E:\Study\C# summer\Game_Store\Game_Store\obj\Debug\net8.0\Game_Store.sourcelink.json
