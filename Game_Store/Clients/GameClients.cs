@@ -2,7 +2,7 @@ using Game_Store.Models;
 
 namespace Game_Store.Clients;
 
-public class GameClients
+public class GameClients(HttpClient httpClient)
 {
     private readonly List<GameSummary> games =
     [
@@ -32,7 +32,7 @@ public class GameClients
         }
     ];
 
-    private readonly Genre[] genres = new GenreClients().GetGenres();
+    private readonly Genre[] genres = new GenreClients(httpClient).GetGenres();
     public GameSummary[] GetGames() => [.. games];
 
     public void AddGame(GameDetails game)
@@ -76,6 +76,11 @@ public class GameClients
         existingGame.Genre = genre.Name;
         existingGame.Price = updatedGame.Price;
         existingGame.ReleaseDate = updatedGame.ReleaseDate;
+    }
+    public void DeleteGame(int id)
+    {
+        var game = GetGameSummaryById(id);
+        games.Remove(game);
     }
     
     private GameSummary GetGameSummaryById(int id)

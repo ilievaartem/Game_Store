@@ -67,7 +67,7 @@ else{
   }; */
   
   private Genre[]? genres;
-  private string title = String.Empty;
+  private string title = string.Empty;
 
   protected override void OnParametersSet()
   {
@@ -108,11 +108,10 @@ else{
     }
     else
     {
-      game.Id = Id.Value;
+      game.Id = Id.Value; 
       GamesClient.UpdateGame(game);
     }
     
-    GamesClient.AddGame(game);
     NavigationManager.NavigateTo("/");
   }
 }
