@@ -10,7 +10,7 @@ public class GameDetails
     [StringLength(50)]
     public required string Name { get; set; }
     
-    [Required(ErrorMessage = "The Genre field is required")]
+    [Required(ErrorMessage = "The Genres field is required")]
     public string? GenreId { get; set; }
     
     [Range(0, 4000)]

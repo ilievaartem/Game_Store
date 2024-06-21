@@ -2,9 +2,11 @@ namespace Game_Store.Models;
 
 public class GameSummary
 {
-    public int Id { get; set; }
+    public int GameId { get; set; }
     public required string Name { get; set; }
-    public required string Genre { get; set; }
+    public required string Genres { get; set; }
     public decimal Price { get; set; }
     public DateOnly ReleaseDate { get; set; }
+    public int? GenreID { get; set; }
+    public Genre Genre { get; set; }
 }

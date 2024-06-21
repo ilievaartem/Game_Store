@@ -18,42 +18,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Study\C# summer\Game_Store\Game_Store
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/App.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Pages/DeleteGame.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVHYW1lLnJhem9y
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/DeleteGame.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGVsZXRlR2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Pages/EditGame.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0R2FtZS5yYXpvcg==
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/EditGame.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRWRpdEdhbWUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRXJyb3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Routes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Layout/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-qijs9rwmpq
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mrogrmabgw
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-9wveavbwdx
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-0j4rz91xqy
