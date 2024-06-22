@@ -36,7 +36,7 @@
 
   private void Confirm()
   {
-    Client.DeleteGame(Game!.GameId);
+    Client.DeleteGameAsync(Game!.GameId);
     NavigationManager.Refresh();
   }
 }

@@ -1,31 +1,29 @@
 using Game_Store.Controllers;
 using Game_Store.Views;
 using Game_Store.Data;
+using Microsoft.EntityFrameworkCore;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var gameStoreApiUrl = builder.Configuration["GameStoreApiUrl"] ??
-                      throw new Exception("GameStoreApiUrl is not set");
+builder.Services.AddHttpClient<GameClients>();
+builder.Services.AddHttpClient<GenreClients>();
 
-builder.Services.AddHttpClient<GameClients>(
-    client => client.BaseAddress = new Uri(gameStoreApiUrl));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnectionString")));
+builder.Services.AddMudServices();
 
-builder.Services.AddHttpClient<GenreClients>(
-    client => client.BaseAddress = new Uri(gameStoreApiUrl));
-
-builder.Services.AddSingleton<AppDbContext>();
+builder.Services.AddScoped<GameClients>();
+builder.Services.AddScoped<GenreClients>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

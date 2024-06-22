@@ -1,37 +1,21 @@
+using Game_Store.Data;
 using Game_Store.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Game_Store.Controllers;
-
-public class GenreClients(HttpClient httpClient)
+namespace Game_Store.Controllers
 {
-    private readonly Genre[] genres =
-    [
-        new ()
-        {
-            Id = 1,
-            Name = "Fighting"
-        },
-        new ()
-        {
-            Id = 2,
-            Name = "Roguelike"
-        },
-        new ()
-        {
-            Id = 3,
-            Name = "Shooter"
-        },
-        new ()
-        {
-            Id = 4,
-            Name = "RPG"
-        },
-        new ()
-        {
-            Id = 5,
-            Name = "Kids and Family"
-        }
-    ];
+    public class GenreClients
+    {
+        private readonly AppDbContext _context;
 
-    public Genre[] GetGenres() => genres;   
+        public GenreClients(AppDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Genre>> GetGenresAsync()
+        {
+            return await _context.Genre.ToListAsync();
+        }
+    }
 }

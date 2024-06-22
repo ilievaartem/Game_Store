@@ -1,98 +1,48 @@
+using Game_Store.Data;
 using Game_Store.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Game_Store.Controllers;
-
-public class GameClients(HttpClient httpClient)
+namespace Game_Store.Controllers
 {
-    private readonly List<GameSummary> games =
-    [
-        new()
+    public class GameClients
+    {
+        private readonly AppDbContext _context;
+
+        public GameClients(AppDbContext context)
         {
-            GameId = 1,
-            Name = "TBoI: Repentance",
-            Genres = "Roguelike",
-            Price = 1499M,
-            ReleaseDate = new DateOnly(2021, 3, 31)
-        },
-        new()
-        {
-            GameId = 2,
-            Name = "CS2",
-            Genres = "Shooter",
-            Price = 0,
-            ReleaseDate = new DateOnly(2023, 9, 27)
-        },
-        new()
-        {
-            GameId = 3,
-            Name = "Slay the Spire",
-            Genres = "Roguelike",
-            Price = 179M,
-            ReleaseDate = new DateOnly(2017, 11, 14)
+            _context = context;
         }
-    ];
 
-    private readonly Genre[] genres = new GenreClients(httpClient).GetGenres();
-    public GameSummary[] GetGames() => [.. games];
-
-    public void AddGame(GameDetails game)
-    {
-        Genre genre = GetGenreById(game.GenreId);
-
-        var gameSummary = new GameSummary
+        public async Task<IEnumerable<GameSummary>> GetGamesAsync()
         {
-            GameId = games.Count + 1,
-            Name = game.Name,
-            Genres = genre.Name,
-            Price = game.Price,
-            ReleaseDate = game.ReleaseDate
-        };
-        
-        games.Add(gameSummary);
-    }
+            return await _context.Games.Include(g => g.Genre).ToListAsync();
+        }
 
-    public GameDetails GetGame(int id)
-    {
-        GameSummary game = GetGameSummaryById(id);
-
-        var genre = genres.Single(genre => string.Equals(genre.Name, game.Genres, StringComparison.OrdinalIgnoreCase));
-
-        return new GameDetails
+        public async Task<GameSummary> GetGameAsync(int id)
         {
-            Id = game.GameId,
-            Name = game.Name,
-            GenreId = genre.Id.ToString(),
-            Price = game.Price,
-            ReleaseDate = game.ReleaseDate
-        };
-    }
+            return await _context.Games.Include(g => g.Genre).FirstOrDefaultAsync(g => g.GameId == id);
+        }
 
-    public void UpdateGame(GameDetails updatedGame)
-    {
-        var genre = GetGenreById(updatedGame.GenreId);
-        GameSummary existingGame = GetGameSummaryById(updatedGame.Id);
+        public async Task AddGameAsync(GameSummary game)
+        {
+            _context.Games.Add(game);
+            await _context.SaveChangesAsync();
+        }
 
-        existingGame.Name = updatedGame.Name;
-        existingGame.Genres = genre.Name;
-        existingGame.Price = updatedGame.Price;
-        existingGame.ReleaseDate = updatedGame.ReleaseDate;
-    }
-    public void DeleteGame(int id)
-    {
-        var game = GetGameSummaryById(id);
-        games.Remove(game);
-    }
-    
-    private GameSummary GetGameSummaryById(int id)
-    {
-        GameSummary? game = games.Find(game => game.GameId == id);
-        ArgumentNullException.ThrowIfNull(game);
-        return game;
-    }
+        public async Task UpdateGameAsync(GameSummary game)
+        {
+            _context.Entry(game).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
 
-    private Genre GetGenreById(string? id)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(id);
-        return genres.Single(genre => genre.Id == int.Parse(id));
+        public async Task DeleteGameAsync(int id)
+        {
+            var game = await _context.Games.FindAsync(id);
+            if (game != null)
+            {
+                _context.Games.Remove(game);
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

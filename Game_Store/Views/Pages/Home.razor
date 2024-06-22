@@ -3,9 +3,9 @@
 
 <PageTitle>Game Catalog</PageTitle>
 
-@if (games is null)
+@if (games == null)
 {
-        <p><em>Loading...</em></p>
+    <p><em>Loading...</em></p>
 }
 else
 {
@@ -19,44 +19,44 @@ else
         <th>Actions</th>
         </thead>
         <tbody>
-            @foreach (var game in games)
-            {
-                <tr>
-                    <td>@game.GameId</td>
-                    <td>@game.Name</td>
-                    <td>@game.Genre</td>
-                    <td class="text-end">@game.Price.ToString("C2")</td>
-                    <td>@game.ReleaseDate</td>
-                    <td>
-                        <div class="d-flex">
-                            <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.GameId)">
-                                <i class="bi bi-pencil"></i>
-                            </a>
-                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="@GetDeleteModalId(game)">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </div>
-                        <DeleteGame Game="@game" />
-                    </td>
-                </tr>
-            }
+        @foreach (var game in games)
+        {
+            <tr>
+                <td>@game.GameId</td>
+                <td>@game.Name</td>
+                <td>@game.Genre?.Name</td>
+                <td class="text-end">@game.Price.ToString("C2")</td>
+                <td>@game.ReleaseDate</td>
+                <td>
+                    <div class="d-flex">
+                        <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.GameId)">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                        <button class="btn btn-danger" data-bs-toggle="modal" @onclick="() => ConfirmDelete(game.GameId)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </td>
+                <DeleteGame />
+            </tr>
+        }
         </tbody>
     </table>
 }
 
 @code {
-    
-    private GameSummary[]? games;
+    private IEnumerable<GameSummary> games;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        games = Client.GetGames();
+        games = await Client.GetGamesAsync();
     }
 
     private static string GameUrl(int id) => $"/editgame/{id}";
 
-    private static string GetDeleteModalId(GameSummary game)
+    private async Task ConfirmDelete(int gameId)
     {
-        return $"#{DeleteGame.GetModalId(game)}";
+        await Client.DeleteGameAsync(gameId);
+        games = await Client.GetGamesAsync();
     }
 }
