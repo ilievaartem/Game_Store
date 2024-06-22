@@ -32,17 +32,35 @@ else
                         <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.GameId)">
                             <i class="bi bi-pencil"></i>
                         </a>
-                        <button class="btn btn-danger" data-bs-toggle="modal" @onclick="() => ConfirmDelete(game.GameId)">
+                        <button class="btn btn-danger" @onclick="() => ConfirmDelete(game.GameId)">
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
                 </td>
-                <DeleteGame />
             </tr>
         }
         </tbody>
     </table>
 }
+
+<!--
+                    <AuthorizeView>
+                        <Authorized>
+                            <button class="btn btn-success" @onclick="() => BuyGame(game.GameId)">
+                                Buy
+                            </button>
+                        </Authorized>
+                        <NotAuthorized>
+                            <button class="btn btn-success" disabled>
+                                Login to Buy
+                            </button>
+                        </NotAuthorized>
+                    </AuthorizeView>
+
+                    private void BuyGame(int gameId)
+                    {
+                        NavigationManager.NavigateTo($"/buygame/{gameId}");
+                    } -->
 
 @code {
     private IEnumerable<GameSummary> games;

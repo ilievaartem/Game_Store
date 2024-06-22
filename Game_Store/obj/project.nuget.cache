@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cimdnsrXRDYpTJ0pUt3PpIsU21D8WNxchmN/gSFnD+SvTJw1e2VPK0UOketPrLrps571IjVDzdH4FQxbfZPcAA==",
+  "dgSpecHash": "jKCY7XfqjB8etU8tYNXaS9XvPHdhOMuz4UVfR8XD5D91zpQiUThdkiLlFUPaBAJbiR6dw7US7iBnFa5mJw1w6Q==",
   "success": true,
   "projectFilePath": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\Game_Store.csproj",
   "expectedPackageFiles": [
@@ -86,7 +86,7 @@
     "C:\\Users\\UA\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
-    "C:\\Users\\UA\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
+    "C:\\Users\\UA\\.nuget\\packages\\system.text.json\\8.0.3\\system.text.json.8.0.3.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"

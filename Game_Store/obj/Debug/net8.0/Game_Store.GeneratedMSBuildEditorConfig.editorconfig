@@ -22,6 +22,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Account/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWNjb3VudFxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Account/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/DeleteGame.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGVsZXRlR2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

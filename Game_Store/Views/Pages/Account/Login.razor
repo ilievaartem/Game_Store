@@ -1,0 +1,52 @@
+@page "/account/login"
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<UserDetails> SignInManager
+@inject NavigationManager NavigationManager
+
+<PageTitle>Login</PageTitle>
+
+<h3>Login</h3>
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <InputText id="username" @bind-Value="loginModel.Username" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <InputText id="password" @bind-Value="loginModel.Password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new LoginModel();
+
+    private async Task HandleLogin()
+    {
+        var result = await SignInManager.PasswordSignInAsync(loginModel.Username, loginModel.Password, isPersistent: false, lockoutOnFailure: false);
+
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/Error");
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required]
+        [StringLength(100)]
+        public string Username { get; set; }
+        
+        [Required]
+        [StringLength(100, MinimumLength = 5)]
+        public string Password { get; set; }
+    }
+}
