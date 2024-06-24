@@ -44,5 +44,11 @@ namespace Game_Store.Controllers
                 await _context.SaveChangesAsync();
             }
         }
+        
+        public async Task<GameSummary> GetGameByIdAsync(int id)
+        {
+            return await _context.Games.Include(g => g.Genre).FirstOrDefaultAsync(g => g.GameId == id);
+        }
+
     }
 }

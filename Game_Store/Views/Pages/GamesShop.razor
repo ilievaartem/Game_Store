@@ -38,7 +38,7 @@ else
                     
                     <!--<AuthorizeView>
                         <Authorized>
-                            <button class="btn btn-success" @onclick="() => BuyGame(game.GameId)">
+                            <button class="btn btn-success" @onclick="() => BuyGames(game.GameId)">
                                 Buy
                             </button>
                         </Authorized>
@@ -71,7 +71,7 @@ else
         games = await Client.GetGamesAsync();
     }
     
-    /*private void BuyGame(int gameId)
+    /*private void BuyGames(int gameId)
     {
         NavigationManager.NavigateTo($"/buygame/{gameId}");
     }*/

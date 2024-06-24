@@ -1,0 +1,64 @@
+@page "/buygame/{gameId:int}"
+@inject GameClients GameClient
+@inject UserController UserController
+@inject NavigationManager NavigationManager
+
+<PageTitle>Buy Game</PageTitle>
+
+@if (game == null || users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h3>Game Details</h3>
+    <p>Name: @game.Name</p>
+    <p>Price: @game.Price.ToString("C2")</p>
+    <p>Genre: @game.Genre?.Name</p>
+    
+    <h3>Select User to Buy</h3>
+    <select @bind="selectedUserId" class="form-select">
+        <option value="">Select a user</option>
+        @foreach (var user in users)
+        {
+            <option value="@user.UserId">@user.UserName</option>
+        }
+    </select>
+    
+    <button class="btn btn-primary mt-2" @onclick="BuyGame" disabled="@(selectedUserId == 0)">Buy</button>
+    
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p>@message</p>
+    }
+}
+
+@code {
+    [Parameter] public int gameId { get; set; }
+    private GameSummary game;
+    private IEnumerable<Users> users;
+    private int selectedUserId;
+    private string message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        game = await GameClient.GetGameAsync(gameId);
+        users = await UserController.GetUsersAsync();
+    }
+
+    private async Task BuyGame()
+    {
+        var user = await UserController.GetUserByIdAsync(selectedUserId);
+        if (user.Balance >= game.Price)
+        {
+            user.Balance -= game.Price;
+            await UserController.UpdateUserBalanceAsync(user.UserId, user.Balance);
+
+            message = "Game purchased successfully!";
+        }
+        else
+        {
+            message = "Insufficient balance!";
+        }
+    }
+}

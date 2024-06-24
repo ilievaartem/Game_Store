@@ -30,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/BuyGames.razor]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQnV5R2FtZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/DeleteGame.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGVsZXRlR2FtZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
