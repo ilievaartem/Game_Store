@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LrY9kOwn9I4RKNWV2tnfSYMCuYTyg3w1jv9xUx77GkY=",
+  "Hash": "ODFQuZqkks2IyXjynxV7IfPs6j/Mag4DCyiwfqN24yM=",
   "Source": "Game_Store",
   "BasePath": "_content/Game_Store",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\MudBlazor.min.css",
-      "SourceId": "MudBlazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\MudBlazor.min.css"
-    },
-    {
-      "Identity": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\MudBlazor.min.js",
-      "SourceId": "MudBlazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\",
-      "BasePath": "_content/MudBlazor",
-      "RelativePath": "MudBlazor.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\UA\\.nuget\\packages\\mudblazor\\6.20.0\\staticwebassets\\MudBlazor.min.js"
-    },
     {
       "Identity": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Game_Store.styles.css",
       "SourceId": "Game_Store",

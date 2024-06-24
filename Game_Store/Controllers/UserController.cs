@@ -1,30 +1,21 @@
+using Game_Store.Data;
 using Game_Store.Models;
-using Game_Store.Views.Pages.Account;
-using Microsoft.AspNetCore.Identity;
 
-namespace Game_Store.Controllers;
-
-public class UserController
+namespace Game_Store.Controllers
 {
-    private readonly UserManager<UserDetails> _userManager;
-    private readonly SignInManager<UserDetails> _signInManager;
-
-    public UserController(UserManager<UserDetails> userManager, SignInManager<UserDetails> signInManager)
+    public class UserController
     {
-        _userManager = userManager;
-        _signInManager = signInManager;
-    }
+        private readonly AppDbContext _context;
 
-    public async Task<IdentityResult> RegisterUser(Register.RegisterModel model)
-    {
-        var user = new UserDetails() { UserName = model.Username };
-        var result = await _userManager.CreateAsync(user, model.Password);
-        return result;
-    }
+        public UserController(AppDbContext dbContext)
+        {
+            _context = dbContext;
+        }
 
-    public async Task<SignInResult> LoginUser(Login.LoginModel model)
-    {
-        var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
-        return result;
+        public async Task AddUserAsync(Users newUser)
+        {
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+        }
     }
 }

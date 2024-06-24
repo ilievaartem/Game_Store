@@ -1,8 +1,8 @@
 @page "/account/login"
 @using System.ComponentModel.DataAnnotations
-@using Microsoft.AspNetCore.Identity
 @inject SignInManager<UserDetails> SignInManager
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Login</PageTitle>
 
@@ -31,7 +31,8 @@
 
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/");
+            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(loginModel.Username);
+            NavigationManager.NavigateTo("/shop");
         }
         else
         {
@@ -43,10 +44,10 @@
     {
         [Required]
         [StringLength(100)]
-        public string Username { get; set; }
+        public string Username { get; set; } = string.Empty;
         
         [Required]
         [StringLength(100, MinimumLength = 5)]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
     }
 }

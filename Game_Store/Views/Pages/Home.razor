@@ -43,25 +43,6 @@ else
     </table>
 }
 
-<!--
-                    <AuthorizeView>
-                        <Authorized>
-                            <button class="btn btn-success" @onclick="() => BuyGame(game.GameId)">
-                                Buy
-                            </button>
-                        </Authorized>
-                        <NotAuthorized>
-                            <button class="btn btn-success" disabled>
-                                Login to Buy
-                            </button>
-                        </NotAuthorized>
-                    </AuthorizeView>
-
-                    private void BuyGame(int gameId)
-                    {
-                        NavigationManager.NavigateTo($"/buygame/{gameId}");
-                    } -->
-
 @code {
     private IEnumerable<GameSummary> games;
 

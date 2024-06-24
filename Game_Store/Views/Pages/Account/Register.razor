@@ -1,68 +1,50 @@
 @page "/account/register"
-@using System.ComponentModel.DataAnnotations
-@using Microsoft.AspNetCore.Identity
-@inject UserManager<UserDetails> UserManager
-@inject SignInManager<UserDetails> SignInManager
+
+@rendermode InteractiveServer
 @inject NavigationManager NavigationManager
+@inject UserController UserController
 
 <PageTitle>Register</PageTitle>
 
 <h3>Register</h3>
-
-<EditForm Model="registerModel" OnValidSubmit="HandleRegistration">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-    <div class="mb-3">
-        <label for="username" class="form-label">Username:</label>
-        <InputText id="username" @bind-Value="registerModel.Username" class="form-control" />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm Model="@newUser" OnValidSubmit="HandleSubmit" FormName="registration">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <InputText id="name" @bind-Value="newUser.UserName" class="form-control" />
+                <ValidationMessage For="() => newUser.UserName" />
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label" >Email:</label>
+                <InputText id="email" @bind-Value="newUser.Email" type="email" class="form-control" />
+                <ValidationMessage For="() => newUser.Email" />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <InputText id="password" @bind-Value="newUser.PasswordHash" type="password" class="form-control" />
+                <ValidationMessage For="() => newUser.PasswordHash" />
+            </div>
+            
+            <button type="submit" class="btn btn-primary mt-2">Create user</button>
+        </EditForm>
     </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email:</label>
-        <InputText id="email" @bind-Value="registerModel.Email" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-        <InputText id="password" @bind-Value="registerModel.Password" type="password" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</EditForm>
-
+</div>
 @code {
-    private RegisterModel registerModel = new RegisterModel();
+    private UserDetails newUser = new UserDetails();
 
-    private async Task HandleRegistration()
+    private async Task HandleSubmit()
     {
-        var user = new UserDetails
-        {
-            UserName = registerModel.Username,
-            Email = registerModel.Email
-        };
-        var result = await UserManager.CreateAsync(user, registerModel.Password);
-
-        if (result.Succeeded)
-        {
-            await SignInManager.SignInAsync(user, isPersistent: false);
+        Console.WriteLine(newUser);
+            var user = new Users
+            {
+                UserName = newUser.UserName,
+                Email = newUser.Email,
+                Password = newUser.PasswordHash,
+            };
+            await UserController.AddUserAsync(user);
             NavigationManager.NavigateTo("/");
-        }
-        else
-        {
-            // handle registration errors
-        }
-    }
-
-    public class RegisterModel
-    {
-        [Required]
-        [StringLength(100)]
-        public string Username { get; set; }
-        
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        [EmailAddress]
-        public string Email { get; set; }
-        
-        [Required]
-        [StringLength(100, MinimumLength = 5)]
-        public string Password { get; set; }
     }
 }

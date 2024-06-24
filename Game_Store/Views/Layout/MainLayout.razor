@@ -1,28 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
-
 <div class="page">
     <div class="sidebar">
         <NavMenu/>
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                  <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                      <i class="bi bi-controller"></i>
-                  </a>
-                  
-                  <div class="col-md-3 text-end">
-                      <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                      <button type="button" class="btn btn-primary">Sign-up</button>
-                  </div>
-                </header>
-            <!--<a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>-->
-        </div>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">Welcome</span>
+          </a>
+
+          <ul class="nav nav-pills">
+              <li class="nav-item">
+              <NavLink class="nav-link active" href="account/register" aria-current="page">
+                    Registration
+              </NavLink>
+              </li>
+              <li class="nav-item"><a href="account/login" class="nav-link">Login</a></li>
+          </ul>
+        </header>
 
         <article class="content px-4">
             @Body

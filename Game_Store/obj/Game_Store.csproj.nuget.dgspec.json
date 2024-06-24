@@ -40,6 +40,18 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.6, )"
@@ -53,10 +65,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.6, )"
-            },
-            "MudBlazor": {
-              "target": "Package",
-              "version": "[6.20.0, )"
             },
             "System.Text.Json": {
               "target": "Package",
