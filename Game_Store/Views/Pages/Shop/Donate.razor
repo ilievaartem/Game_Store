@@ -1,0 +1,71 @@
+@page "/donate"
+
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@inject UserController UserController
+@inject NavigationManager NavigationManager
+
+<PageTitle>Donate</PageTitle>
+
+<h3>Donate to User</h3>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="donationModel" OnValidSubmit="HandleDonation" FormName="donate">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mb-3">
+            <label for="userId" class="form-label">Select User:</label>
+            <select id="userId" @bind="donationModel.UserId" class="form-select">
+                @foreach (var user in users)
+                {
+                    <option value="@user.UserId">@user.UserName</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount:</label>
+            <InputNumber id="amount" @bind-Value="donationModel.Amount" class="form-control" />
+            <ValidationMessage For="() => donationModel.Amount" />
+        </div>
+        <button type="submit" class="btn btn-primary">Donate</button>
+    </EditForm>
+}
+
+@code {
+    private List<Users> users;
+    private DonationModel donationModel = new DonationModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = (await UserController.GetUsersAsync()).ToList();
+    }
+
+    private async Task HandleDonation()
+    {
+        if (donationModel.Amount >= 50 && donationModel.Amount <= 10000)
+        {
+            var user = await UserController.GetUserByIdAsync(donationModel.UserId);
+            if (user != null)
+            {
+                user.Balance += donationModel.Amount;
+                await UserController.UpdateUserBalanceAsync(user.UserId, user.Balance);
+                NavigationManager.NavigateTo("/");
+            }
+        }
+    }
+
+    public class DonationModel
+    {
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        [Range(50, 10000, ErrorMessage = "Amount must be between 50 and 10000.")]
+        public decimal Amount { get; set; }
+    }
+}
