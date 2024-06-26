@@ -1,5 +1,7 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 @inject GameClients Client
+@inject NavigationManager NavigationManager
 
 <PageTitle>Game Catalog</PageTitle>
 
@@ -32,7 +34,7 @@ else
                         <a class="btn btn-primary me-2" role="button" href="@GameUrl(game.GameId)">
                             <i class="bi bi-pencil"></i>
                         </a>
-                        <button class="btn btn-danger" @onclick="() => ConfirmDelete(game.GameId)">
+                        <button class="btn btn-danger me-2" @onclick="() => DeleteGame(game.GameId)">
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
@@ -51,9 +53,9 @@ else
         games = await Client.GetGamesAsync();
     }
 
-    private static string GameUrl(int id) => $"/editgame/{id}";
+    private string GameUrl(int id) => $"/editgame/{id}";
 
-    private async Task ConfirmDelete(int gameId)
+    private async Task DeleteGame(int gameId)
     {
         await Client.DeleteGameAsync(gameId);
         games = await Client.GetGamesAsync();

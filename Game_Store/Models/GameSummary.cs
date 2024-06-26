@@ -9,4 +9,5 @@ public class GameSummary
     public DateOnly ReleaseDate { get; set; }
     public int? GenreID { get; set; }
     public Genre Genre { get; set; }
+    public ICollection<UserGame> UserGames { get; set; } 
 }

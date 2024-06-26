@@ -53,9 +53,7 @@ else
         var user = await UserController.GetUserByIdAsync(selectedUserId);
         if (user.Balance >= game.Price)
         {
-            user.Balance -= game.Price;
-            await UserController.UpdateUserBalanceAsync(user.UserId, user.Balance);
-
+            await UserController.BuyGame(selectedUserId, gameId, game.Price);
             message = "Game purchased successfully!";
         }
         else
