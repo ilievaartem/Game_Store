@@ -1,7 +1,7 @@
 @page "/buygame/{gameId:int}"
 
 @rendermode InteractiveServer
-@inject GameClients GameClient
+@inject GameController GameController
 @inject UserController UserController
 @inject NavigationManager NavigationManager
 
@@ -44,7 +44,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        game = await GameClient.GetGameAsync(gameId);
+        game = await GameController.GetGameAsync(gameId);
         users = await UserController.GetUsersAsync();
     }
 

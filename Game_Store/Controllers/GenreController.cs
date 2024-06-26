@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Game_Store.Controllers
 {
-    public class GenreClients
+    public class GenreController
     {
         private readonly AppDbContext _context;
 
-        public GenreClients(AppDbContext context)
+        public GenreController(AppDbContext context)
         {
             _context = context;
         }

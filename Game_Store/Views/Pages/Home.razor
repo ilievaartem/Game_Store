@@ -1,9 +1,12 @@
 ﻿@page "/"
+
 @rendermode InteractiveServer
-@inject GameClients Client
+@inject GameController Controller
 @inject NavigationManager NavigationManager
 
 <PageTitle>Game Catalog</PageTitle>
+
+<input type="text" @bind="searchTerm" @oninput="FilterGames" placeholder="Search by name" class="form-control mb-3" />
 
 @if (games == null)
 {
@@ -21,7 +24,7 @@ else
         <th>Actions</th>
         </thead>
         <tbody>
-        @foreach (var game in games)
+        @foreach (var game in filteredGames)
         {
             <tr>
                 <td>@game.GameId</td>
@@ -47,17 +50,33 @@ else
 
 @code {
     private IEnumerable<GameSummary> games;
+    private IEnumerable<GameSummary> filteredGames;
+    private string searchTerm;
 
     protected override async Task OnInitializedAsync()
     {
-        games = await Client.GetGamesAsync();
+        games = await Controller.GetGamesAsync();
+        filteredGames = games;
     }
 
     private string GameUrl(int id) => $"/editgame/{id}";
 
     private async Task DeleteGame(int gameId)
     {
-        await Client.DeleteGameAsync(gameId);
-        games = await Client.GetGamesAsync();
+        await Controller.DeleteGameAsync(gameId);
+        games = await Controller.GetGamesAsync();
+        FilterGames();
+    }
+
+    private void FilterGames()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredGames = games;
+        }
+        else
+        {
+            filteredGames = games.Where(g => g.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase));
+        }
     }
 }

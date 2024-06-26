@@ -3,8 +3,8 @@
 
 @rendermode InteractiveServer
 @inject NavigationManager NavigationManager
-@inject GameClients GamesClient
-@inject GenreClients GenresClient
+@inject GameController GamesController
+@inject GenreController GenresController
 
 <PageTitle>@title</PageTitle>
 
@@ -66,7 +66,7 @@ else
 
     protected override async Task OnParametersSetAsync()
     {
-        genres = await GenresClient.GetGenresAsync();
+        genres = await GenresController.GetGenresAsync();
 
         if (Id is null)
         {
@@ -82,7 +82,7 @@ else
         else
         {
             title = "Edit Game";
-            var gameSummary = await GamesClient.GetGameAsync(Id.Value);
+            var gameSummary = await GamesController.GetGameAsync(Id.Value);
             game = new GameDetails
             {
                 Id = gameSummary.GameId,
@@ -107,17 +107,17 @@ else
                 Price = game.Price,
                 ReleaseDate = game.ReleaseDate
             };
-            await GamesClient.AddGameAsync(gameSummary);
+            await GamesController.AddGameAsync(gameSummary);
         }
         else
         {
-            var gameSummary = await GamesClient.GetGameAsync(Id.Value);
+            var gameSummary = await GamesController.GetGameAsync(Id.Value);
             gameSummary.Name = game.Name;
             gameSummary.GenreID = int.Parse(game.GenreId);
             gameSummary.Genres = string.Empty; 
             gameSummary.Price = game.Price;
             gameSummary.ReleaseDate = game.ReleaseDate;
-            await GamesClient.UpdateGameAsync(gameSummary);
+            await GamesController.UpdateGameAsync(gameSummary);
         }
 
         NavigationManager.NavigateTo("/");

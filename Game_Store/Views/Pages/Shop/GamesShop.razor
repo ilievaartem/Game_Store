@@ -1,6 +1,6 @@
 ﻿@page "/shop"
 
-@inject GameClients Client
+@inject GameController Controller
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 
@@ -74,7 +74,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        games = await Client.GetGamesAsync();
+        games = await Controller.GetGamesAsync();
     }
 
     private static string ShopUrl(int id) => $"/buygame/{id}";
