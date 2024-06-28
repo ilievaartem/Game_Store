@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xzj02GXenXcaqDuXHpUdqfjxl2rV17ZUJJeUh4RJq+Vvs9SV5x8EitSslqmQ7pSIa0CBPa7c9xSLdeYvET/uSw==",
+  "dgSpecHash": "O1x81Wk3QLGC0ybpcVgYeA11XWr5dCo1UjHsWnShDVPPueCy3Q1kkbNCCVjgatfgrSzyIllGkM/HQTJcB9BD+Q==",
   "success": true,
-  "projectFilePath": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\Game_Store.csproj",
+  "projectFilePath": "E:\\Study\\fcs\\Game_Store\\Game_Store\\Game_Store.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UA\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\UA\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

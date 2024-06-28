@@ -5187,11 +5187,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\Game_Store.csproj",
+      "projectUniqueName": "E:\\Study\\fcs\\Game_Store\\Game_Store\\Game_Store.csproj",
       "projectName": "Game_Store",
-      "projectPath": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\Game_Store.csproj",
+      "projectPath": "E:\\Study\\fcs\\Game_Store\\Game_Store\\Game_Store.csproj",
       "packagesPath": "C:\\Users\\UA\\.nuget\\packages\\",
-      "outputPath": "E:\\Study\\C# summer\\Game_Store\\Game_Store\\obj\\",
+      "outputPath": "E:\\Study\\fcs\\Game_Store\\Game_Store\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\UA\\AppData\\Roaming\\NuGet\\NuGet.Config",

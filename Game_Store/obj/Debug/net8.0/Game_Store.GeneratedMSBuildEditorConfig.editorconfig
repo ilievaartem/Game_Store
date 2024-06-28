@@ -9,67 +9,67 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Game_Store
 build_property.RootNamespace = Game_Store
-build_property.ProjectDir = E:\Study\C# summer\Game_Store\Game_Store\
+build_property.ProjectDir = E:\Study\fcs\Game_Store\Game_Store\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Study\C# summer\Game_Store\Game_Store
+build_property.MSBuildProjectDirectory = E:\Study\fcs\Game_Store\Game_Store
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/App.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Account/Login.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Account/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWNjb3VudFxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Account/Register.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Account/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/EditGame.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/EditGame.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRWRpdEdhbWUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Error.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRXJyb3IucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Home.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/PurchaseHistory.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/PurchaseHistory.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUHVyY2hhc2VIaXN0b3J5LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Shop/BuyGames.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Shop/BuyGames.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2hvcFxCdXlHYW1lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Shop/Donate.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Shop/Donate.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2hvcFxEb25hdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Pages/Shop/GamesShop.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Pages/Shop/GamesShop.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcU2hvcFxHYW1lc1Nob3AucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Routes.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91dGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/_Imports.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Layout/MainLayout.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-mrogrmabgw
 
-[E:/Study/C\# summer/Game_Store/Game_Store/Views/Layout/NavMenu.razor]
+[E:/Study/fcs/Game_Store/Game_Store/Views/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-0j4rz91xqy
